@@ -1,0 +1,81 @@
+body {
+	background-color: #5c6c84;
+}
+/*---Header and Logo Styles --*/
+.header {
+	position: fixed;
+	width: 100%;
+	border-bottom: 3px solid white;
+	padding-bottom: 25px;
+}
+.header h2 {
+	font-size: 70px;
+	font-weight: bold;
+	color: black;
+	font-family: sans-serif;
+	display: block;
+	text-align: center;
+	padding-top: 25px;
+}
+#logo {
+	height: 120px;
+	width: 120px;
+	margin-left: 20px; 
+	margin-top: 20px;
+	position: absolute;
+}
+/*---Header and Logo Styles --*/
+#cityState h2 {
+	margin-top: 300px;
+	font-size: 70px;
+	font-weight: bold;
+	color: black;
+	font-family: sans-serif;
+}
+/*---Weather Conditions Styles --*/
+#weatherData {
+	font-size: 2em;
+	color: white;
+	display: inline-flex;
+	text-align: center;
+	margin: 100px 25% 100px 25%;
+}
+#weatherData div {
+	margin: 20px 20px;
+	border: 2px solid white;
+	background-color: black;
+	height: 120px;
+	width: 120px;
+}
+#conditions {
+	height: 100px;
+	width: 150px;
+}
+/*---Search Box Styles --*/
+input{
+	margin-top: 200px;
+	margin-bottom: 50px;
+	border-radius: 5px;
+	height: 40px;
+	text-align: center;
+	size: 1.5em;
+}
+/*---Header and Logo Styles --*/
+.footer {
+  height: 50px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: black;
+  text-align: center;
+}
+.social_icons {
+	height: 40px;
+	width: 40px;
+	display: inline-flex;
+	margin-right: 25px;
+	margin-bottom: 5px;
+	margin-top: -5px; 
+}
