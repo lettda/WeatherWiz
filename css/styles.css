@@ -11,7 +11,7 @@ body {
 .nav {
 
 }
-.nav h2 {
+.nav > h2 {
 	font-size: 70px;
 	font-weight: bold;
 	color: black;
@@ -36,32 +36,45 @@ body {
 	min-height: 90vh;
 	background: linear-gradient (transparent, black);
 }
-#cityState h2 {
+#cityState > h2 {
 	font-size: 100px;
 	padding-top: 50px;
 }
 /*---Weather Conditions Styles --*/
 #weatherData {
-
+	max-height: 50vh;
 }
-#weatherData div {
-	margin-top: 100px;
+.currentWeatherData{
+	margin-top: 50px;
 	margin-right: 20px;
+	margin-bottom: 75px;
 	height: 200px;
 	width: 200px;
 	background-color: white;
 	display: inline-flex;
-/*	flex-direction: row;*/
-	justify-content: space-between;
 	box-shadow: 10px 10px 10px black;
 }
-/*#conditions {
-	height: 100px;
-	width: 150px;
-}*/
-/*---Search Box Styles --*/
-input{
-	position: relative;
+.currentWeatherData > h4 {
+	font-size: 2.5em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10%;
+	line-height: 1.5;
+}
+/* Weekly Forecast Styles */
+#weekly_forecast {
+	background-color: ;
+	max-height: 50vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.day {
+	min-height: 150px;
+	width: 90%;
+	background-color: white;
+	margin-bottom: 20px;
+	box-shadow: 10px 10px 10px black;
 }
 /*---Header and Logo Styles --*/
 .footer {

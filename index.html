@@ -10,9 +10,10 @@
 <body>
 	<div class="container-fluid">
 		<div class="nav">
-		<img id ="logo" src="css/graphics/weatherwiz_logo.svg">
+			<img id ="logo" src="css/graphics/weatherwiz_logo.svg">
 			<h2>Weather Wizard</h2>
-		</div>
+<!-- 			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/1024px-Magnifying_glass_icon.svg.png">
+ -->		</div>
 	</div>
 	<div class="flex-container weatherContent">
 		<div class=" row text-center">
@@ -22,13 +23,26 @@
 			
 		</div>
 		<div class="col-xs-12 text-center flex-container" id="weatherData">
-			<div class = "currentTemp">
+			<div class= "currentWeatherData" id = "currentTemp">
    			</div>
-   			<div class = "currentConditions">
+   			<div class= "currentWeatherData" id = "currentConditions">
    			</div>
-   			<div class = "percipitationChance">
+   			<div class= "currentWeatherData" id = "percipitationChance">
    			</div>
+   		<!--Weekley Forecast-->
+			<div class="flex-container" id="weekly_forecast">
+				<div class="day" id="hourly">
+					<h2>Hourly Forecast</h2>
+				</div>
+				<div class="day" id="daily">
+					<h2>Daily Forecast</h2>
+				</div>
+				<div class="day" id="alerts">
+					<h2>Alerts</h2>
+				</div>
+			</div>
 		</div>
+
 	</div>
 	
 	<div class="footer">

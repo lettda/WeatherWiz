@@ -6,7 +6,7 @@ $(document).ready(function(){
 	let currentState;
 	let country;
 
-		$.getJSON("https://crossorigin.me/http://ip-api.com/json",(data_init) =>{ //access RESTFUL geo location API & set lattitude.longitude
+		$.getJSON("https://crossorigin.me/http://ip-api.com/json", (data_init) => { //access RESTFUL geo location API & set lattitude.longitude
 			lat = data_init.lat;
 			long = data_init.lon;
 			currentCity = data_init.city;
@@ -27,16 +27,16 @@ $(document).ready(function(){
 				// 	case:
 				// }
 
-				$(".currentTemp").append("<h4 id='tempData'>Currently<br> "+data.currently.temperature+"&#8451</h4>");
-				$(".currentConditions").append("<h4>Conditions<br>"+data.currently.summary +"</h4>");
-				$(".percipitationChance").append("<h4> Chance of Percipitation<br> " + data.currently.precipProbability +"%" + "</h4>");
+				$("#currentTemp").append("<h4 id='tempData'>Currently<br> "+data.currently.temperature+"</h4>");
+				$("#currentConditions").append("<h4>Conditions<br>"+data.currently.summary +"</h4>");
+				$("#percipitationChance").append("<h4> Chance of Percipitation<br> " + data.currently.precipProbability +"%" + "</h4>");
 				$(".wind")	
-					$("#reveal").on('click', () =>{ //click button
+					$("#reveal").on('click',() => { //click button
 						data.main.tempData //on click convert temperature to farenheight
 					});
 				
 				$("#tempData").hover( () => {
-					$(this).fadeToggle('slow',() => {
+					$(this).fadeToggle('slow', () => {
 
 					});
 				});
