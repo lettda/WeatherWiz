@@ -1,14 +1,16 @@
 body {
-	background-color: red;
-/*	background-size: cover;*/
+	max-height: 100vh;
 }
-/*---Header and Logo Styles --*/
+.flex-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 75vh;
+}
+/*---Nav and Logo Styles --*/
+
 .nav {
-	position: fixed;
-	width: 100%;
-	border-bottom: 3px solid white;
-	padding-bottom: 25px;
-	z-index: 10000;
+
 }
 .nav h2 {
 	font-size: 70px;
@@ -28,30 +30,25 @@ body {
 }
 /*---Header and Logo Styles --*/
 .weatherContent {
-	background-image: url("./sunshine.jpg");
+	margin-top: 15px;
+	background-image: url("graphics/cloudy.jpg");
 	background-size: cover;
+	background-repeat: no-repeat;
+	max-height: 800px;
+	background: linear-gradient (transparent, black);
 }
 #cityState h2 {
-	margin-top: 300px;
-	font-size: 70px;
-	font-weight: bold;
-	color: black;
-	font-family: sans-serif;
+
 }
 /*---Weather Conditions Styles --*/
 #weatherData {
-	font-size: 2em;
-	color: white;
-	display: inline-flex;
-	text-align: center;
-	margin: 100px 25% 100px 25%;
+
 }
 #weatherData div {
-	margin: 20px 20px;
-	border: 2px solid white;
-	background-color: black;
-	height: 120px;
-	width: 120px;
+	height: 100px;
+	width: 100px;
+	background-color: white;
+	display: inline-flex;
 }
 #conditions {
 	height: 100px;
@@ -59,29 +56,23 @@ body {
 }
 /*---Search Box Styles --*/
 input{
-	margin-top: 200px;
-	margin-bottom: 50px;
-	border-radius: 5px;
-	height: 40px;
-	text-align: center;
-	size: 1.5em;
+
 }
 /*---Header and Logo Styles --*/
 .footer {
-  height: 50px;
+  height: 100px;
   position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
   background-color: black;
   text-align: center;
 }
 .social_icons {
-	height: 40px;
-	width: 40px;
+	height: 50px;
+	width: 50px;
 	display: inline-flex;
 	margin-right: 25px;
 	margin-bottom: 5px;
-	margin-top: -5px; 
+	margin-top: 10px;
 }
