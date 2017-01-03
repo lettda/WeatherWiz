@@ -14,14 +14,14 @@ $(document).ready(function(){
 			country = data_init.country;
 					$("#cityState").append("<h2>"+currentCity + "," + currentState + "<br>" + country + "</h2>");
 
-		// let api = "https://crossorigin.me/https://api.darksky.net/forecast/1246aa267663e22a4e428e4b20f0df5b/" + lat +"," + long;
+		let api = "https://crossorigin.me/https://api.darksky.net/forecast/1246aa267663e22a4e428e4b20f0df5b/" + lat +"," + long;
 		//Access weather API
 		// console.log(data_init);
 		
 
 			$.getJSON(api, (data) => {
 				// console.log(data);
-				const weekly_data = data.daily.data;
+				const weekly_forecast = data.daily.data;
 				// switch(weatherStatus) {
 				// 	case:
 				// }
@@ -32,14 +32,16 @@ $(document).ready(function(){
 				// 	$("#reveal").on('click',() => { //click button
 				// 		data.main.tempData //on click convert temperature to farenheight
 				// 	});
-				const weekly_forecast = (weekly_data, (data_2) => { //create function to iterate over daily forecast days
-					for (var i = 1; i < 5; i++) { //loop over the object's next 5 days
-						console.log(data_2[i]);				//select the variable corresponding to the value of [i] ie. (if i = 3 variable selected should be day_3)
-															//append a <h2> within that div containing the day and <p> containing the high and low temperature for the day
+				$("#weekly_forecast div").each( () => { //loop through each div within weekly forecast
+					const i = 1;					   //Intialize counter starting at 1, we already have day[0] displayed in current data
+					while (i < 5) {					  //While my counter is less than 5 -> (for the next 5 days of the week)
+						$(this).is(('#day_'+i)() => {   //Target the referenced element (current div in iterration)
+														//Append the inner html to reflect JSON data for day[i];
+						});
+						i++;							//Add 1 to i and loop again unless i = 5
 					}
+						
 				});
-				// let day_1 = data.daily.data[1];
-				// console.log(day_1);
 			});		
 		});
 });
