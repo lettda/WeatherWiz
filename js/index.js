@@ -21,8 +21,7 @@ $(document).ready(function(){
 
 			$.getJSON(api, (data) => {
 				// console.log(data);
-				let weatherStatus = data.currently.icon; //get Icon from API related to current weather conditions
-
+				const weekly_data = data.daily.data;
 				// switch(weatherStatus) {
 				// 	case:
 				// }
@@ -30,29 +29,17 @@ $(document).ready(function(){
 				$("#currentTemp").append("<h4 id='tempData'>Currently<br> "+data.currently.temperature+"</h4>");
 				$("#currentConditions").append("<h4>Conditions<br>"+data.currently.summary +"</h4>");
 				$("#percipitationChance").append("<h4> Chance of Percipitation<br> " + data.currently.precipProbability +"%" + "</h4>");
-				// $(".wind")	
 				// 	$("#reveal").on('click',() => { //click button
 				// 		data.main.tempData //on click convert temperature to farenheight
 				// 	});
-				
-				// $("#tempData").hover( () => {
-				// 	$(this).fadeToggle('slow', () => {
-
-				// 	});
-				// });
-				const weekly_forecast = (argument) => {
-					
-				}
-				let day_1 = data.daily.data[1];
-				console.log(day_1);
-				let day_2 = data.daily.data[2];
-				console.log(day_2);
-				let day_3 = data.daily.data[3];
-				console.log(day_3);
-				let day_4 = data.daily.data[4];
-				console.log(day_4);
-				let day_5 = data.daily.data[5];
-				console.log(day_5);
+				const weekly_forecast = (weekly_data, (data_2) => { //create function to iterate over daily forecast days
+					for (var i = 1; i < 5; i++) { //loop over the object's next 5 days
+						console.log(data_2[i]);				//select the variable corresponding to the value of [i] ie. (if i = 3 variable selected should be day_3)
+															//append a <h2> within that div containing the day and <p> containing the high and low temperature for the day
+					}
+				});
+				// let day_1 = data.daily.data[1];
+				// console.log(day_1);
 			});		
 		});
 });

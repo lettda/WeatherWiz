@@ -1,5 +1,5 @@
-body {
-	max-height: 100vh;
+html {
+	min-height: 100vh;
 	min-width: 100%;
 }
 .flex-container {
@@ -87,10 +87,11 @@ body {
   min-width: 100%;
   position: fixed;
   right: 0;
-  bottom: 0;
+  bottom: 15px;
   left: 0;
   background-color: black;
   text-align: center;
+
 }
 .social_icons {
 	height: 75px;
