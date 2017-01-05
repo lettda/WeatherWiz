@@ -2,10 +2,8 @@ html {
 	min-height: 100vh;
 	min-width: 100%;
 }
-.flex-container {
-	flex-direction: column;
-	justify-content: center;
-	height: 75vh;
+h2, h3, p {
+	color: black;
 }
 /*---Nav and Logo Styles --*/
 .container-fluid {
@@ -39,11 +37,13 @@ html {
 	background-size: cover;
 	background-repeat: no-repeat;
 	min-height: 90vh;
-	background: linear-gradient (transparent, black);
 }
 #cityState > h2 {
 	font-size: 100px;
-	padding-top: 50px;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	text-align: center;
+	right: -5px;
 }
 /*---Weather Conditions Styles --*/
 	/*--Current Forecast Styles--*/
@@ -54,17 +54,20 @@ html {
 	justify-content: space-around;
 }
 .currentForecast{
-	height: 200px;
-	width: 200px;
-	background-color: red;
+	height: 220px;
+	width: 240px;
+	background-color: white;
 	box-shadow: 10px 10px 10px black;
+	text-align: center;
 }
 .currentForecast > h4 {
 	font-size: 2.5em;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 10%;
+	position: relative;
+ 	top: 50%;
+ 	transform: translateY(-50%);
+ 	color: black;
 	line-height: 1.5;
+	font-weight: bold;
 }
 /* Weekly Forecast Styles */
 #weeklyWeatherData {
@@ -76,45 +79,40 @@ html {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	text-align: center;
 }
 #weekDay {
-	width: 25%;
-	margin-right: 0px;
-
+/*	width: 25%;*/
+	right: 0;
 }
 #weekDay > h2 {
 	font-size: 60px;
-
+	margin-right: 0px;
+	line-height: 140px;
+	font-weight: bolder;
 }
 .day {
 	min-height: 150px;
-	width: 70%;
-	background-color: red;
+	background-color: transparent;
 	margin-bottom: 20px;
 	box-shadow: 10px 10px 10px black;
 	white-space: nowrap;
 }
 .day > h2 {
 	font-size: 3em;
-	float: left;
-	border-right: 2px solid red;
-	margin-right: 
 }
 .day > h3 {
 	font-size: 4em;
 }
 .day > p {
 	font-size: 2em;
+	font-weight: bolder;
 }
 /*---Header and Logo Styles --*/
 .footer {
   height: 100px;
   min-width: 100%;
   position: fixed;
-  right: 0;
-  bottom: 15px;
-  left: 0;
+  bottom: 0px;
   background-color: black;
   text-align: center;
 
