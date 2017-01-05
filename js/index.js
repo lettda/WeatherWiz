@@ -18,7 +18,7 @@ $(document).ready(function(){
 			country = data_init.country;
 					$("#cityState").append("<h2>"+currentCity + "," + currentState + "<br>" + country + "</h2>");
 
-		let api = "https://crossorigin.me/https://api.darksky.net/forecast/1246aa267663e22a4e428e4b20f0df5b/" + lat +"," + long;	
+		// let api = "https://crossorigin.me/https://api.darksky.net/forecast/1246aa267663e22a4e428e4b20f0df5b/" + lat +"," + long;	
 			//Access weather API
 		// console.log(data_init);
 		
@@ -38,7 +38,7 @@ $(document).ready(function(){
 				// 	});
 					for (var i = 0; i < 6; i++) { //loop over the object's next 5 days
 						const weekly_forecast = data.daily.data;
-						$('#day_'+[i]).append("<h2>"+weekly_forecast[i].apparentTemperatureMax + "<br></h2><P>It Worked</p>");
+						$('#day_'+[i]).append("<h3>"+weekly_forecast[i].apparentTemperatureMax + "<br></h3><P>" + weekly_forecast[i].summary + "</p>");
 
 						// console.log(weekly_forecast[i]);				//select the variable corresponding to the value of [i] ie. (if i = 3 variable selected should be day_3)
 															//append a <h2> within that div containing the day and <p> containing the high and low temperature for the day

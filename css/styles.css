@@ -46,20 +46,20 @@ html {
 	padding-top: 50px;
 }
 /*---Weather Conditions Styles --*/
-#weatherData {
-	max-height: 50vh;
+	/*--Current Forecast Styles--*/
+#currentWeatherData {
+	display: flex;
+	flex-direction: row;
+	height: 20vh;
+	justify-content: space-around;
 }
-.currentWeatherData{
-	margin-top: 50px;
-	margin-right: 20px;
-	margin-bottom: 75px;
+.currentForecast{
 	height: 200px;
 	width: 200px;
-	background-color: white;
-	display: inline-flex;
+	background-color: red;
 	box-shadow: 10px 10px 10px black;
 }
-.currentWeatherData > h4 {
+.currentForecast > h4 {
 	font-size: 2.5em;
 	margin-left: auto;
 	margin-right: auto;
@@ -67,19 +67,45 @@ html {
 	line-height: 1.5;
 }
 /* Weekly Forecast Styles */
+#weeklyWeatherData {
+	flex-direction: column;
+}
 #weekly_forecast {
 	background-color: ;
 	max-height: 50vh;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: flex-end;
+	text-align: center;
+}
+#weekDay {
+	width: 25%;
+	margin-right: 0px;
+
+}
+#weekDay > h2 {
+	font-size: 60px;
+
 }
 .day {
 	min-height: 150px;
-	width: 90%;
-	background-color: white;
+	width: 70%;
+	background-color: red;
 	margin-bottom: 20px;
 	box-shadow: 10px 10px 10px black;
+	white-space: nowrap;
+}
+.day > h2 {
+	font-size: 3em;
+	float: left;
+	border-right: 2px solid red;
+	margin-right: 
+}
+.day > h3 {
+	font-size: 4em;
+}
+.day > p {
+	font-size: 2em;
 }
 /*---Header and Logo Styles --*/
 .footer {
