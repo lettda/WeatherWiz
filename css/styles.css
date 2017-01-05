@@ -2,11 +2,6 @@ html {
 	min-height: 100vh;
 	min-width: 100%;
 }
-.flex-container {
-	flex-direction: column;
-	justify-content: center;
-	height: 75vh;
-}
 /*---Nav and Logo Styles --*/
 .container-fluid {
 	padding: 0;
@@ -40,6 +35,7 @@ html {
 	background-repeat: no-repeat;
 	min-height: 90vh;
 	background: linear-gradient (transparent, black);
+		color: black;
 }
 #cityState > h2 {
 	font-size: 100px;
@@ -58,6 +54,7 @@ html {
 	width: 200px;
 	background-color: red;
 	box-shadow: 10px 10px 10px black;
+	text-align: center;
 }
 .currentForecast > h4 {
 	font-size: 2.5em;
@@ -73,23 +70,22 @@ html {
 #weekly_forecast {
 	background-color: ;
 	max-height: 50vh;
-	display: flex;
+	padding: 0;
 	flex-direction: column;
 	align-items: flex-end;
 	text-align: center;
+	width: 60%
 }
 #weekDay {
-	width: 25%;
-	margin-right: 0px;
-
+	padding: 0;
+	width: 40%
 }
 #weekDay > h2 {
 	font-size: 60px;
-
+	line-height: 140px;
 }
 .day {
 	min-height: 150px;
-	width: 70%;
 	background-color: red;
 	margin-bottom: 20px;
 	box-shadow: 10px 10px 10px black;
@@ -97,9 +93,7 @@ html {
 }
 .day > h2 {
 	font-size: 3em;
-	float: left;
 	border-right: 2px solid red;
-	margin-right: 
 }
 .day > h3 {
 	font-size: 4em;
@@ -113,7 +107,7 @@ html {
   min-width: 100%;
   position: fixed;
   right: 0;
-  bottom: 15px;
+  bottom: 0px;
   left: 0;
   background-color: black;
   text-align: center;

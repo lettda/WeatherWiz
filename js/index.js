@@ -18,7 +18,7 @@ $(document).ready(function(){
 			country = data_init.country;
 					$("#cityState").append("<h2>"+currentCity + "," + currentState + "<br>" + country + "</h2>");
 
-		// let api = "https://crossorigin.me/https://api.darksky.net/forecast/1246aa267663e22a4e428e4b20f0df5b/" + lat +"," + long;	
+		let api = "https://crossorigin.me/https://api.darksky.net/forecast/1246aa267663e22a4e428e4b20f0df5b/" + lat +"," + long;	
 			//Access weather API
 		// console.log(data_init);
 		
