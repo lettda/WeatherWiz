@@ -2,9 +2,12 @@ html {
 	min-height: 100vh;
 	min-width: 100%;
 }
+<<<<<<< HEAD
 h2, h3, p {
 	color: black;
 }
+=======
+>>>>>>> refs/remotes/origin/master
 /*---Nav and Logo Styles --*/
 .container-fluid {
 	padding: 0;
@@ -37,6 +40,11 @@ h2, h3, p {
 	background-size: cover;
 	background-repeat: no-repeat;
 	min-height: 90vh;
+<<<<<<< HEAD
+=======
+	background: linear-gradient (transparent, black);
+		color: black;
+>>>>>>> refs/remotes/origin/master
 }
 #cityState > h2 {
 	font-size: 100px;
@@ -76,9 +84,10 @@ h2, h3, p {
 #weekly_forecast {
 	background-color: ;
 	max-height: 50vh;
-	display: flex;
+	padding: 0;
 	flex-direction: column;
 	align-items: flex-end;
+<<<<<<< HEAD
 }
 #weekDay {
 /*	width: 25%;*/
@@ -93,12 +102,32 @@ h2, h3, p {
 .day {
 	min-height: 150px;
 	background-color: transparent;
+=======
+	text-align: center;
+	width: 60%
+}
+#weekDay {
+	padding: 0;
+	width: 40%
+}
+#weekDay > h2 {
+	font-size: 60px;
+	line-height: 140px;
+}
+.day {
+	min-height: 150px;
+	background-color: red;
+>>>>>>> refs/remotes/origin/master
 	margin-bottom: 20px;
 	box-shadow: 10px 10px 10px black;
 	white-space: nowrap;
 }
 .day > h2 {
 	font-size: 3em;
+<<<<<<< HEAD
+=======
+	border-right: 2px solid red;
+>>>>>>> refs/remotes/origin/master
 }
 .day > h3 {
 	font-size: 4em;
@@ -112,7 +141,13 @@ h2, h3, p {
   height: 100px;
   min-width: 100%;
   position: fixed;
+<<<<<<< HEAD
   bottom: 0px;
+=======
+  right: 0;
+  bottom: 0px;
+  left: 0;
+>>>>>>> refs/remotes/origin/master
   background-color: black;
   text-align: center;
 
