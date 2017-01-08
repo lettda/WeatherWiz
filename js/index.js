@@ -22,7 +22,7 @@ $(document).ready(function(){
 		
 
 			$.getJSON(api, (data) => {
-				console.log(data);
+				// console.log(data);
 				
 				// switch(weatherStatus) {
 				// 	case:
@@ -36,12 +36,21 @@ $(document).ready(function(){
 				// 	});
 					for (var i = 0; i < 6; i++) { //Begin loop - loop over the object's next 5 days
 						const weekly_forecast = data.daily.data;
+						let today = moment().format('D MMM, YYYY');//Format the date in the form Day / Month / Year from moment.js library
+						const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
 						$('#day_'+[i]).append("<h3>"+weekly_forecast[i].apparentTemperatureMax + "<br></h3><P>" + weekly_forecast[i].summary + "</p>"); //append a <h2> within that div containing the day and <p> containing the high and low temperature for the day
 							//Get the day of the week...
-						const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-						let a = new Date('01/03/2017');
-						let nextDay = weekday[a.getDay()+1]; //(get the day of the week)
-						alert(nextDay);
+						let a = new Date(today); //parse current date
+						let nextDay = weekday[a.getDay()+i]; //(get the day of the week)
+						let dayData = $("#weekDay > h2").eq(i).data('fday'); //accessthe data-attribute of each H2 within #weekday
+						$("#weekDay").append("<h2>"+weekday[a.getDay()+i+1]+"</h2>");
+
+						// if (dayData = [i]) {	//if the data attribute of the H2 element === i
+						// 	(weekday[i]);	//append the current day of the week in the H2
+						// }
+
+						console.log(dayData);
 
 							//
 					}
