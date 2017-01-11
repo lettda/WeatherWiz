@@ -24,32 +24,44 @@ $(document).ready(function(){
 			$.getJSON(api, (data) => {
 				console.log(data);
 				
-				// switch(weatherStatus) {
-				// 	case:
-				// }
+				const weatherStatus = data.currently.summary;
+
+				switch(weatherStatus) { //Create switch statement to check the current forecast and alter the background accordingly
+					case 'Cloudy':
+					case 'Partially-Cloudy':
+					case 'Mostly-Cloudy':
+						$('.weatherContent').css("background-image", "url()");
+						break;
+					case 'Sunny':
+					case 'Partly-Sunny':
+						$('.weatherContent').css("background-image", "url()");
+						break;
+				}
 
 				$("#currentTemp").append("<h4 id='tempData'>Currently<br> "+ Math.round(data.currently.temperature)+"&#8457</h4>");
-				$("#currentConditions").append("<h4>Conditions<br>"+data.currently.summary +"</h4>");
+				$("#currentConditions").append("<h4>Conditions<br>"+ weatherStatus +"</h4>");
 				$("#percipitationChance").append("<h4> Chance of Percipitation<br> " + data.currently.precipProbability +"%" + "</h4>");
 				// 	$("#reveal").on('click',() => { //click button
 				// 		data.main.tempData //on click convert temperature to farenheight
 				// 	});
-					for (var i = 0; i < 6; i++) { //Begin loop - loop over the object's next 5 days
-						const weekly_forecast = data.daily.data;
-						let today = moment().format('D MMM, YYYY');//Format the date in the form Day / Month / Year from moment.js library
-						const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]; //array for days of the week
 
-						$('#day_'+[i]).append("<h3> HI: "+Math.round(weekly_forecast[i].apparentTemperatureMax) + "&#8457 LO: "+ Math.round(weekly_forecast[i].apparentTemperatureMin) +  "&#8457</h3><br><P>" + weekly_forecast[i].summary + "</p>"); //append a <h2> within that div containing the day and <p> containing the high and low temperature for the day
+				const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]; //array for days of the week
+				const weekly_forecast = data.daily.data;
+				let today = moment().format('D MMM, YYYY');//Format the date in the form Day / Month / Year from moment.js library
+
+					for (var i = 1; i <= 5; i++) { //Begin loop - loop over the object's next 5 days
+						const forecast = weekly_forecast[i];
+						
+						$('#day_'+[i]).append("<h3> HI: "+Math.round(forecast.apparentTemperatureMax) + "&#8457 LO: "+ Math.round(forecast.apparentTemperatureMin) +  "&#8457</h3><br><P>" + weekly_forecast[i].summary + "</p>"); //append a <h2> within that div containing the day and <p> containing the high and low temperature for the day
 							
 							//Get the day of the week...
-						const a = new Date(today); //parse current date
-						let nextDay = weekday[a.getDay()+i]; //(get the day of the week)
-						$("#weekDay").append("<h2>"+weekday[a.getDay()+i+1]+"</h2>"); //append the current day of the week in the H2
+						const todaysDate = new Date(today); //parse current date
+						const nextDay = todaysDate.getDay(); //(get the day of the week)
 
-
+						let forecastDay = (nextDay + i) % 7; // wrap around end of week
+						$("#weekDay").append("<h2>"+weekday[forecastDay]+"</h2>"); //append the current day of the week in the H2
 
 					}
-					$('#weekDay > h4').last().remove();
 			});		
 		});
 });
