@@ -123,3 +123,16 @@ html {
 	margin-bottom: 5px;
 	margin-top: 10px;
 }
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {
+
+	
+
+}
+
+@media (min-width: 1025px) {
+
+}

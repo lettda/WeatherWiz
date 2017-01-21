@@ -37,7 +37,7 @@ $(document).ready(function(){
 						$('.weatherContent').css("background-image", "url()");
 						break;
 				}
-
+				
 				$("#currentTemp").append("<h4 id='tempData'>Currently<br> "+ Math.round(data.currently.temperature)+"&#8457</h4>");
 				$("#currentConditions").append("<h4>Conditions<br>"+ weatherStatus +"</h4>");
 				$("#percipitationChance").append("<h4> Chance of Percipitation<br> " + data.currently.precipProbability +"%" + "</h4>");
