@@ -25,18 +25,22 @@ $(document).ready(function(){
 				console.log(data);
 				
 				const weatherStatus = data.currently.summary;
+				const statusChecker = weatherStatus.toLowerCase();
 
-				switch(weatherStatus) { //Create switch statement to check the current forecast and alter the background accordingly
-					case 'Cloudy':
-					case 'Partially-Cloudy':
-					case 'Mostly-Cloudy':
-						$('.weatherContent').css("background-image", "url()");
-						break;
-					case 'Sunny':
-					case 'Partly-Sunny':
-						$('.weatherContent').css("background-image", "url()");
-						break;
-				}
+					if (statusChecker.includes('overcast')) { //Change the backgorund according to the current weather forecast
+						$('body').css("background-image", "url(css/graphics/cloudy.jpg)");
+					} else if (statusChecker.includes('cloudy')) { 
+						$('body').css("background-image", "url(css/graphics/cloudy.jpg)");
+					} else if (statusChecker.includes('sunny')) {
+						$('body').css("background-image", "url(css/graphics/sunshine.jpg)");
+					} else if (statusChecker.includes('fog')) {
+						$('body').css("background-image", "url(css/graphics/fog.jpg)");
+					} else if (statusChecker.includes('rain')) {
+						$('body').css("background-image", "url(css/graphics/rain.jpg)");
+					}
+					else {
+						$('body').css("background-image", "url(css/graphics/clear_sky.jpg)");	
+					}
 				
 				$("#currentTemp").append("<h4 id='tempData'>Currently<br> "+ Math.round(data.currently.temperature)+"&#8457</h4>");
 				$("#currentConditions").append("<h4>Conditions<br>"+ weatherStatus +"</h4>");
