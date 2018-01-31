@@ -6,17 +6,15 @@ $(document).ready(function(){
 	let currentState;
 	let country;
 
-
-
-		$.getJSON("https://crossorigin.me/http://ip-api.com/json", (data_init) => { //access RESTFUL geo location API & set lattitude.longitude
+		$.getJSON("https://cors-anywhere.herokuapp.com/http://ip-api.com/json", (data_init) => { //access RESTFUL geo location API & set lattitude.longitude
 			lat = data_init.lat;
 			long = data_init.lon;
 			currentCity = data_init.city;
 			currentState = data_init.region;
 			country = data_init.country;
-					$("#cityState").append("<h2>"+currentCity + "," + currentState + "<br>" + country + "</h2>");
+					$("#cityState").append("<h1>"+currentCity + "," + currentState + "</h1>");
 
-		let api = "https://crossorigin.me/https://api.darksky.net/forecast/1246aa267663e22a4e428e4b20f0df5b/" + lat +"," + long;	
+		let api = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/1246aa267663e22a4e428e4b20f0df5b/" + lat +"," + long;	
 			//Access weather API
 		// console.log(data_init);
 		
@@ -24,27 +22,27 @@ $(document).ready(function(){
 			$.getJSON(api, (data) => {
 				console.log(data);
 				
-				const weatherStatus = data.currently.summary;
-				const statusChecker = weatherStatus.toLowerCase();
+				const weatherStatus = data.currently.summary.toLowerCase();
+				// const statusChecker = weatherStatus.toLowerCase();
 
-					if (statusChecker.includes('overcast')) { //Change the backgorund according to the current weather forecast
+					if (weatherStatus.includes('overcast')) { //Change the backgorund according to the current weather forecast
+						$('body').css("background-image", "url(css/graphics/overcast.jpg)");
+					} else if (weatherStatus.includes('cloudy')) { 
 						$('body').css("background-image", "url(css/graphics/cloudy.jpg)");
-					} else if (statusChecker.includes('cloudy')) { 
-						$('body').css("background-image", "url(css/graphics/cloudy.jpg)");
-					} else if (statusChecker.includes('sunny')) {
+					} else if (weatherStatus.includes('sunny')) {
 						$('body').css("background-image", "url(css/graphics/sunshine.jpg)");
-					} else if (statusChecker.includes('fog')) {
+					} else if (weatherStatus.includes('fog')) {
 						$('body').css("background-image", "url(css/graphics/fog.jpg)");
-					} else if (statusChecker.includes('rain')) {
+					} else if (weatherStatus.includes('rain')) {
 						$('body').css("background-image", "url(css/graphics/rain.jpg)");
 					}
 					else {
 						$('body').css("background-image", "url(css/graphics/clear_sky.jpg)");	
 					}
 				
-				$("#currentTemp").append("<h4 id='tempData'>Currently<br> "+ Math.round(data.currently.temperature)+"&#8457</h4>");
-				$("#currentConditions").append("<h4>Conditions<br>"+ weatherStatus +"</h4>");
-				$("#percipitationChance").append("<h4> Chance of Percipitation<br> " + data.currently.precipProbability +"%" + "</h4>");
+				$("#currentTemp").append("<h4 id='tempData'>Currently:<br> "+ Math.round(data.currently.temperature)+"&#8457</h4>");
+				$("#currentConditions").append("<h4>Conditions:<br>"+ weatherStatus +"</h4>");
+				$("#percipitationChance").append("<h4> Chance of Percipitation:<br> " + data.currently.precipProbability +"%" + "</h4>");
 				// 	$("#reveal").on('click',() => { //click button
 				// 		data.main.tempData //on click convert temperature to farenheight
 				// 	});
@@ -64,7 +62,6 @@ $(document).ready(function(){
 
 						let forecastDay = (nextDay + i) % 7; // wrap around end of week
 						$("#weekDay").append("<h2>"+weekday[forecastDay]+"</h2>"); //append the current day of the week in the H2
-
 					}
 			});		
 		});
