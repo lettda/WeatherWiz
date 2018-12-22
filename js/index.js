@@ -14,7 +14,7 @@ $(document).ready(function(){
 			country = data_init.country;
 					$("#cityState").append("<h1>"+currentCity + "," + currentState + "</h1>");
 
-		let api = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/{INSERT API KEY HERE/" + lat +"," + long;	
+		let api = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/{INSERT API KEY HERE}/" + lat +"," + long;	
 			//Access weather API
 		// console.log(data_init);
 		
